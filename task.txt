@@ -6,8 +6,8 @@ Owner should be able to add new products to inventory along with images - Done
 
 Customer should be able to order products from inventory if they are not out of stock - Done
 
-Owner should receive email in the evening 6 PM IST for the product details including the left quantity
+Owner should receive email in the evening 6 PM IST for the product details including the left quantity - Done
 
 if the quantity of product reaches lower to certain amount lets say 10 then the Owner should get both email as well as websocket based notification if available
 
-All images needs to be stored on third party bucket
+All images needs to be stored on third party bucket - Done

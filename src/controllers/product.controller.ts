@@ -1,5 +1,6 @@
 import express from "express";
 import Product from "../models/product.model";
+import User from "../models/user.model";
 
 export const createProduct = async (req: express.Request, res: express.Response) => {
     try {
@@ -9,7 +10,9 @@ export const createProduct = async (req: express.Request, res: express.Response)
                 message: "Please provide all details of product..."
             })
         }
-        const product = new Product({title, quantity, images, owner: req.userId});
+        const owner = await User.findOne({_id: req.userId});
+        const ownerEmail = owner?.email;
+        const product = new Product({title, quantity, images, ownerEmail});
         await product.save();
         return res.status(201).json({
             message: "Product created successfully...",
